@@ -1,0 +1,8 @@
+MODEL_PATH = "./model/mistral-7b-instruct-v0.1.Q2_K.gguf"
+UVICORN_HOST = 127.0.0.1  
+UVICORN_PORT = 7860
+SOURCE_DATA = "./source_data"
+VECTOR_STORE = "./vectorestore"
+TOGETHER_API_KEY = 'xxx'
+EMBED_MODEL = "BAAI/bge-base-en-v1.5"
+TOGETHER_MODEL_PATH = "mistralai/Mistral-7B-Instruct-v0.2"

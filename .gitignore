@@ -4,3 +4,4 @@ vectorestore/*
 .gradio/
 model/*
 !model/readme.txt
+.env

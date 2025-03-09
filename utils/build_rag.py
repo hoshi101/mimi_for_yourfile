@@ -1,19 +1,25 @@
 from langchain_community.vectorstores import Chroma
-from langchain_community.document_loaders import PyPDFLoader, PyPDFDirectoryLoader, TextLoader, DirectoryLoader
-from langchain.text_splitter import CharacterTextSplitter, TokenTextSplitter
+from langchain_community.document_loaders import PyPDFLoader, PyPDFDirectoryLoader
+from langchain.text_splitter import CharacterTextSplitter,TokenTextSplitter
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from dotenv import load_dotenv
 import os
-import glob
 
 load_dotenv()
 
 class RAG:
     def __init__(self) -> None:
-        self.pdf_folder_path = os.getenv('SOURCE_DATA')
-        self.emb_model_path = os.getenv('EMBED_MODEL')
+        # Use default values if environment variables are not set
+        self.pdf_folder_path = os.environ.get('SOURCE_DATA', './source_data')
+        self.emb_model_path = os.environ.get('EMBED_MODEL', 'BAAI/bge-base-en-v1.5')
+        self.vector_store_path = os.environ.get('VECTOR_STORE', './vectorestore')
+        
+        # Print paths for debugging
+        print(f"PDF folder path: {self.pdf_folder_path}")
+        print(f"Embedding model: {self.emb_model_path}")
+        print(f"Vector store path: {self.vector_store_path}")
+        
         self.emb_model = self.get_embedding_model(self.emb_model_path)
-        self.vector_store_path = os.getenv('VECTOR_STORE')
 
     # without docker
     # def load_docs(self,path:str) -> PyPDFDirectoryLoader:
