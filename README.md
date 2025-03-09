@@ -12,8 +12,8 @@ The application follows this architecture:
 1. **Document Processing**: Source documents are loaded, split into chunks, and embedded into a vector database
 2. **Query Processing**: When a user asks a question, the system retrieves relevant document chunks
 3. **Answer Generation**: The LLM generates an answer based on the retrieved context and the question
-
-[Waiting to add photos..]
+![diagram](https://github.com/user-attachments/assets/7c9eae5d-7b9f-477d-9573-d7602d19d5c9)
+[Architecture diagram]
 
 ## Features
 
@@ -91,4 +91,7 @@ When you add new documents, the vector database will be automatically rebuilt wh
 3. The system will retrieve relevant information from your documents and generate an answer
 
 ## Example Queries
-[Waiting to add an Example Queries and Responses..]
+
+![2025-03-09 02-59-26_2](https://github.com/user-attachments/assets/d4fbf9b0-7f4b-4fc5-a69b-a296430e80ea)
+
+[Example Queries and Responses edit by hoshi😊]
