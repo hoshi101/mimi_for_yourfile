@@ -36,7 +36,7 @@ demo = gr.ChatInterface(
     textbox=gr.Textbox(
         placeholder="Ask a question", container=False, lines=1, scale=8
     ),
-    title="LLM App",
+    title="MIMI",
 )
 
 # Mount Gradio interface to FastAPI
@@ -44,9 +44,12 @@ app = gr.mount_gradio_app(app, demo, path="/")
 
 if __name__ == "__main__":
     # mounting at the root path
+    host = os.environ.get("UVICORN_HOST", "0.0.0.0")
+    port = int(os.environ.get("UVICORN_PORT", 7860))
+    print(f"Starting server on {host}:{port}")
     uvicorn.run(
         app="main:app",
-        host=os.getenv("UVICORN_HOST"),  
-        port=int(os.getenv("UVICORN_PORT"))
+        host=host,
+        port=port
     )
 
