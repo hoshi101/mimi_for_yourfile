@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  llm-app:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./source_data:/app/source_data
+      - ./vectorestore:/app/vectorestore
+      - ./model:/app/model
+    environment:
+      - UVICORN_HOST=0.0.0.0
+      - UVICORN_PORT=7860

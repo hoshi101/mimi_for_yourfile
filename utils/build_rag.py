@@ -15,11 +15,35 @@ class RAG:
         self.emb_model = self.get_embedding_model(self.emb_model_path)
         self.vector_store_path = os.getenv('VECTOR_STORE')
 
-    def load_docs(self,path:str) -> PyPDFDirectoryLoader:
-        loader = PyPDFDirectoryLoader(path)
-        docs = loader.load()
-        return docs
+    # without docker
+    # def load_docs(self,path:str) -> PyPDFDirectoryLoader:
+    #     loader = PyPDFDirectoryLoader(path)
+    #     docs = loader.load()
+    #     return docs
 
+    def load_docs(self, path: str):
+        documents = []
+        
+        # Load PDFs if any
+        try:
+            pdf_loader = PyPDFDirectoryLoader(path)
+            pdf_docs = pdf_loader.load()
+            documents.extend(pdf_docs)
+            print(f"Loaded {len(pdf_docs)} PDF documents")
+        except Exception as e:
+            print(f"No PDF documents found or error loading PDFs: {e}")
+        
+        # Load text files
+        try:
+            for txt_file in glob.glob(os.path.join(path, "*.txt")):
+                loader = TextLoader(txt_file)
+                txt_docs = loader.load()
+                documents.extend(txt_docs)
+                print(f"Loaded text file: {txt_file}")
+        except Exception as e:
+            print(f"Error loading text files: {e}")
+            
+        return documents
     
     def get_embedding_model(self,emb_model) -> HuggingFaceBgeEmbeddings :
         model_kwargs = {'device': 'cpu'}

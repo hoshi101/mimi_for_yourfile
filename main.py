@@ -27,8 +27,8 @@ class Response(BaseModel):
 
 @app.post("/", response_model=Response)
 async def predict_api(prompt: Request):
-    response = predict_rag(prompt.prompt)  # Fixed: use prompt.prompt
-    return Response(response=response)  # Fixed: wrap response in Response model
+    response = predict_rag(prompt.prompt)
+    return Response(response=response)
 
 # Create Gradio interface
 demo = gr.ChatInterface(
