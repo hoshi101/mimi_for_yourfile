@@ -94,4 +94,8 @@ When you add new documents, the vector database will be automatically rebuilt wh
 
 ![2025-03-09 02-59-26_2](https://github.com/user-attachments/assets/d4fbf9b0-7f4b-4fc5-a69b-a296430e80ea)
 
+in Docker
+
+![GIF2_01](https://github.com/user-attachments/assets/bf6fc4ad-ecd4-4636-9a10-eafb332f7d07)
+
 [Example Queries and Responses edit by hoshi😊]
