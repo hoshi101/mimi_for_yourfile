@@ -1,0 +1,6 @@
+.venv/
+vectorestore/*
+!vectorestore/readme.txt
+.gradio/
+model/*
+!model/readme.txt

@@ -1,0 +1,16 @@
+LLama and LLama2 Comparison
+
+LLama is Meta's first-generation large language model released in February 2023. It was trained on publicly available datasets and designed primarily for research purposes. The original LLama came in different sizes ranging from 7B to 65B parameters.
+
+LLama2 is the successor to LLama, released in July 2023. Key differences include:
+1. Larger training dataset: Trained on 2 trillion tokens vs LLama's 1 trillion tokens
+2. Longer context window: 4K tokens vs 2K tokens in LLama
+3. Commercial usage: LLama2 is free for commercial use, while LLama had research-only license
+4. Better performance: Shows improved performance across various benchmarks
+5. Safety improvements: Enhanced safety measures and reduced toxic outputs
+6. Fine-tuned chat versions: Comes with specifically fine-tuned chat models
+7. Parameter sizes: Available in 7B, 13B, and 70B parameter versions
+
+Sliding window attention in LLama2 is an optimization technique that improves efficiency when processing long sequences. Instead of attending to all previous tokens, the model only attends to a fixed-size window of recent tokens, reducing computational complexity from O(n²) to O(n×w) where w is the window size. This allows LLama2 to handle longer contexts more efficiently while maintaining performance.
+
+LLama2 incorporates several architectural improvements and was trained using supervised fine-tuning and reinforcement learning with human feedback (RLHF) to improve its performance and safety. The model shows particular improvements in coding, math, and reasoning tasks compared to its predecessor.

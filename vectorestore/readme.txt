@@ -1,0 +1,1 @@
+You need to run your RAG to create the vector store (or can run on my script)

@@ -1,0 +1,1 @@
+Please download the model path from this url "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGU" and place inside this folder.
