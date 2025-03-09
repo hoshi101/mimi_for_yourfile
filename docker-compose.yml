@@ -10,7 +10,7 @@ services:
       - ./vectorestore:/app/vectorestore
       - ./model:/app/model
     environment:
-      - UVICORN_HOST=0.0.0.0
+      - UVICORN_HOST=127.0.0.1
       - UVICORN_PORT=7860
       - VECTOR_STORE=./vectorestore
       - SOURCE_DATA=./source_data
