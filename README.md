@@ -29,7 +29,6 @@ The application follows this architecture:
 1. Clone the repository:
    ```bash
    git clone https://github.com/hoshi101/mimi_for_yourfile.git
-   cd mimi2_forurfile
     ```
 2. Create a virtual environment:
    ```bash
@@ -56,7 +55,6 @@ The application follows this architecture:
 1. Clone the repository:
    ```bash
    git clone https://github.com/hoshi101/mimi_for_yourfile.git
-   cd mimi2_forurfile
 
 2. Download the Mistral-7B model:
    ```bash
